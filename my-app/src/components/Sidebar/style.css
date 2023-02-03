@@ -1,0 +1,13 @@
+.Sidebar{
+    display: flex;
+    flex-direction: column;
+    font-size: 32px;
+    gap: 20px;
+}
+.Sidebar_item{
+    border-bottom: 1px solid black;
+}
+.Sidebar_item a{
+    text-decoration: none;
+    color: black;
+}
