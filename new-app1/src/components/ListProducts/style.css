@@ -1,0 +1,7 @@
+.ListProducts_wrapper{
+    background-color:#fff ;
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    gap: 20px;
+    
+}
