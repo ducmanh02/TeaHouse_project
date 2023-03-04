@@ -54,3 +54,8 @@ body{
     display: flex ;
     flex-direction: column;
 }
+.dark {
+    padding: 10px;
+    color: aliceblue;
+    background-color: #333;
+  }

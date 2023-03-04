@@ -16,3 +16,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.dark {
+  padding: 10px;
+  color: aliceblue;
+  background-color: #333;
+}

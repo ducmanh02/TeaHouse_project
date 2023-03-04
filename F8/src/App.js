@@ -1,49 +1,96 @@
-import React from "react";
-import "./App.css";
 import { useState } from "react";
 
 function App() {
-  //Get from local storage
-  const  storageTasks = localStorage.getItem("tasks");
-  console.log(JSON.parse(storageTasks));
+  const [toDo, setToDo] = useState("");
+  const [list, setList] = useState(() => {
+    const storedList = localStorage.getItem("toDoList");
+    return storedList ? JSON.parse(storedList) : [];
+  });
+  const [editingIndex, setEditingIndex] = useState(null);
+  // ADD TAsk
+  function handleSubmit(event) {
+    event.preventDefault();
+    setList([...list, toDo]);
+    setToDo("");
 
-  const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState((() => {
-    const storageTasks =JSON.parse(localStorage.getItem("tasks"));
-    return storageTasks? storageTasks : [];
-  }));
-
-  const handleSubmit = () => {
-    setTasks(prev => {
-      const newTasks = [...prev,task]
-
-      //Save to local storage
-      const jsonTasks = JSON.stringify(newTasks);
-      localStorage.setItem("tasks",jsonTasks);
-
-      return newTasks;
-
-    });
-    setTask("");
-  };
+    //save the list to local storage
+    localStorage.setItem("toDoList", JSON.stringify([...list, toDo]));
+  }
+  // delete task and delete task of localstorage
+  function handleDelete(index) {
+    const newList = list.filter((element, i) => i !== index);
+    setList(newList);
+    localStorage.setItem("toDoList", JSON.stringify(newList));
+  }
+  //edit input  task
+  function handleEdit(index, newToDo) {
+    const newList = list.map((item, i) => (i === index ? newToDo : item));
+    setList(newList);
+    localStorage.setItem("toDoList", JSON.stringify(newList));
+  }
+  //DELETE ALL
+  function handleDeleteAll() {
+    localStorage.clear();
+    const newList = [];
+    setList(newList);
+    localStorage.setItem("toDoList", JSON.stringify(newList));
+  }
 
   return (
-    <div className="App">
-      <div className="add_task">
-        <input
-          type="text"
-          value={task}
-          onChange={(e) => setTask(e.target.value)}
-        />
-        <button onClick={handleSubmit}>ADD TASK</button>
+    <div style={{ padding: 32 }}>
+      <div style={{ display: "flex" }}>
+        <form
+          style={{ display: "inlineBlock" }}
+          onSubmit={handleSubmit}
+          action=""
+        >
+          <h1>TO DO LIST</h1>
+          <input
+            type="text"
+            value={toDo}
+            onChange={(e) => setToDo(e.target.value)}
+          />
+          <button type="submit">ADD</button>
+        </form>
+        <button
+          onClick={handleDeleteAll}
+          style={{ fontSize: "14px", marginLeft: 10 }}
+          onMouseOver={(e) => (e.target.style.backgroundColor = "red")}
+          onMouseOut={(e) => (e.target.style.backgroundColor = "white")}
+        >
+          DELETE ALL
+        </button>
       </div>
-      <ul className="list_tasks">
-        {tasks.map((task, id) => (
-         
-            <li key={id}>{task.name}</li>
- 
-        ))}
-      </ul>
+      {list.map((item, index) => (
+        <div style={{ display: "flex", paddingTop: 20 }}>
+          {editingIndex === index ? (
+            <>
+              <input
+                type="text"
+                defaultValue={item}
+                onChange={(e) => handleEdit(index, e.target.value)}
+              />
+              <button onClick={() => setEditingIndex(null)}>DONE</button>
+            </>
+          ) : (
+            <>
+              <li key={item}>{item}</li>
+              <button
+                onClick={() => handleDelete(index)}
+                style={{ marginLeft: 10, marginTop: 3, padding: 1 }}
+              >
+                DELETE
+              </button>
+              <button
+                onClick={() => setEditingIndex(index)}
+                style={{ marginLeft: 10, marginTop: 3, padding: 1 }}
+              >
+                EDIT
+              </button>
+            </>
+          )}
+        </div>
+      ))}
     </div>
   );
 }

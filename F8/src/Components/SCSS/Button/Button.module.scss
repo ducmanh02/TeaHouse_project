@@ -1,0 +1,20 @@
+.btn {
+    font-size: 26px;
+    padding: 4px 16px;
+    border: 1px solid #ccc;
+    &:hover {
+        cursor: pointer;
+        opacity: 0.7;
+    }
+}
+
+.active {
+    background-color: red;
+}
+.primary {
+    color: #fff;
+    background-color: #007bff;
+}
+.warning {
+    background-color: #ffc106;
+}

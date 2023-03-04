@@ -3,6 +3,8 @@ import {FaShoppingCart} from "react-icons/fa";
 import {IoLogoAmazon} from "react-icons/io5";
 import {BiSearch} from "react-icons/bi";
 
+
+
 import  "./style.css"
 
 
