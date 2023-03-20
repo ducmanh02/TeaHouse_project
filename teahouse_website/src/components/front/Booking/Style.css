@@ -1,0 +1,52 @@
+
+.info-time {
+  max-width: 1140px;
+  display: flex;
+  height: 580px;
+  margin: auto;
+}
+.time-left {
+  background-color: #4d8a54;
+}
+.time-content {
+    display: block;
+  max-width: 680px;
+  padding: 90px 40px;
+  color: white;
+}
+.time-content h1 {
+  margin-bottom: 26px;
+}
+.time-open {
+  font-size: 26px;
+  margin: 20px 0;
+}
+.time-open h6 {
+  padding: 6px 0;
+}
+.order-btn button {
+  width: 190px;
+  height: 50px;
+  background-color: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 30px;
+  color: #4d8a54;
+  cursor: pointer;
+}
+.order-btn button:active{
+    transform: translateY(2px);
+}
+.time-logo {
+  float: right;
+  transform: translate(0, -170px);
+}
+.img-right {
+  max-width: 40%;
+  padding: 10px 0;
+}
+.img-right img {
+  height: 100%;
+  width: 100%;
+}
