@@ -1,21 +1,31 @@
-
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import Footer from './components/front/Footer/Footer';
-import News from './components/front/News/News';
-import Booking from './components/front/Booking/Booking';
-import Intro from './components/front/Intro/Intro';
-import Products from './components/front/Products/Products';
-
+import Home from "./components/Home";
+import Admin from "./components/Admin";
+import Admin_product from "./components/Admin/quan_ly_product";
+import Admin_user from "./components/Admin/quan_ly_user"
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   
   return (
     <div className="App">
       
-      <Intro/>
-      <Products /> 
-      <Booking/>
-      <News/>
-      <Footer />
+      
+      <BrowserRouter>
+      {/* <Header/> */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          {/* <Route path="/đăng nhập" element={<Signin getname={getname}/>} /> */}
+          <Route path="/Admin" element={<Admin />} />
+          <Route path="/Admin/user" element={<Admin_user />} />
+          <Route path="/Admin/product" element={<Admin_product/>} />
+          {/* <Route path="/đăng ký" element={<Signup   />} /> */}
+        </Routes>
+
+      
+      </BrowserRouter>
+      {/* <ToastContainer /> */}
     </div>
   );
 }

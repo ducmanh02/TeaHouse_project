@@ -11,29 +11,10 @@ const Products = () => {
     const HotTea = sanpham.filter(el => el.type === 'HotTea')
     const Smoothies = sanpham.filter(el => el.type === 'Smoothies')
     const Cake = sanpham.filter(el => el.type === 'Cake')
-    console.log(Cake)
-
-    const [activeItem,setActiveItem] = useState([
-        {
-            type : 'HotTea',
-            active : true,
-        },
-        {
-            type : 'HotTea2',
-            active : false,
-        },
-        {
-            type : 'Smoothies',
-            active : false,
-        },
-        {
-            type : 'Cake',
-            active : false,
-        }
-    ])
-    console.log(activeItem)
+    
 
   const [an,setAn]=useState(HotTea)
+  console.log(an);
 
     return (
         <div>
@@ -70,7 +51,7 @@ const Products = () => {
 
                 </ul>
             </div>
-            <div class="list-tea">
+            <div className="list-tea">
                 {an.map((el, index) => (
                     <div key={index} class="box-tea">
                         <div class="img-tea">
