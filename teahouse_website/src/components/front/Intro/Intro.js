@@ -8,6 +8,11 @@ import Product2 from '../../../assets/img/product-2.webp'
 import Product3 from '../../../assets/img/product-3.webp'
 import Product4 from '../../../assets/img/product-4.webp'
 
+import Logo from '../../../assets/img/title_base.webp'
+import IconAboutUs1 from '../../../assets/img/about-icon-1.webp'
+import IconAboutUs2 from '../../../assets/img/about-icon-2.webp'
+import IconAboutUs3 from '../../../assets/img/about-icon-3.webp'
+
 const Intro = () => {
   return (
     <div>
@@ -52,7 +57,63 @@ const Intro = () => {
         </ul>
       </div>
     </div>
-    
+    <div id="introduce__part" class="AboutUs">
+      <div class="About__content">
+        <div class="box-content">
+          <div class="about-img">
+            <img src={Logo} alt="" />
+          </div>
+          <h1>TẠI SAO CHỌN CHÚNG TÔI</h1>
+          <p>
+            Với những nghệ nhân rang tâm huyết đội ngũ tài năng cùng những câu
+            chuyện trà đầy cảm hứng, ngôi nhà Tea House là không gian dành
+            riêng cho những ai trót yêu say đắm hương vị của những lá trà
+            tuyệt hảo.
+          </p>
+        </div>
+        <ul class="list-quantity">
+          <li class="box-quantity">
+            <div class="list-text">
+              <div class="list-icon">
+                <img src={IconAboutUs1} alt="" />
+              </div>
+              <div class="modal-content">
+                <h4>Giá cả phải chăng</h4>
+                <p>Cam kết chỉ cung cấp cà phê có nguồn gốc được kiểm soát</p>
+              </div>
+            </div>
+          </li>
+          <li class="box-quantity">
+            <div class="list-text">
+              <div class="list-icon">
+              <img src={IconAboutUs2} alt="" />
+              </div>
+              <div class="modal-content">
+                <h4>Hương vị tuyệt hảo</h4>
+                <p>
+                  Những giọt trà được lựa chọn cẩn thận ngay từ lúc đang ngâm
+                  mình trong sương
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="box-quantity">
+            <div class="list-text">
+              <div class="list-icon">
+                <img src={IconAboutUs3} alt="" />
+              </div>
+              <div class="modal-content">
+                <h4>Sản phẩm tự nhiên</h4>
+                <p>
+                  Cam kết chỉ cung cấp lá trà có nguồn gốc được kiểm soát chất
+                  lượng
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
     </div>
   )
 }

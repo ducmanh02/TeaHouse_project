@@ -9,9 +9,9 @@ const Booking = () => {
   return (
     <div className='product--content'>
       <div class="info-time">
-      <div class="time-left">
-        <div class="time-content">
-          <div class="time-img">
+      <div className="time-left">
+        <div className="time-content">
+          <div className="time-img">
             <img src={TitleBase} alt="" />
           </div>
           <h1>THỜI GIAN MỞ CỬA</h1>
@@ -20,19 +20,19 @@ const Booking = () => {
             mộc mạc để mình ngồi lại bên nhau và chia sẻ câu chuyện riêng của
             mình. Tea House hẹn gặp bạn chốn quen thuộc.
           </p>
-          <div class="time-open">
+          <div className="time-open">
             <h6>T2-T6: 8h30 - 21h30</h6>
             <h6>T7-CN: 8h00 - 22h00</h6>
           </div>
-          <div class="order-btn">
+          <div className="order-btn">
             <button>Đặt bàn ngay</button>
           </div>
-          <div class="time-logo">
+          <div className="time-logo">
             <img src={BodyTimeLogo} alt="" />
           </div>
         </div>
       </div>
-      <div class="img-right">
+      <div className="img-right">
         <img src={BodyTimePicture} alt="" />
       </div>
     </div>
