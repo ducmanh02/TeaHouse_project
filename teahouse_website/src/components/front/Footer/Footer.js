@@ -37,7 +37,7 @@ const Footer = () => {
           </div>
           <div className="contact-item">
             <div><BsFillTelephoneFill className="footer-icon-item"/></div>
-            <di>Hotline đặt bàn: 1900 6750<br/>Hotline giao hàng: 1900 1001 </di>
+            <div>Hotline đặt bàn: 1900 6750<br/>Hotline giao hàng: 1900 1001 </div>
           </div>
         </div>
       </li>
