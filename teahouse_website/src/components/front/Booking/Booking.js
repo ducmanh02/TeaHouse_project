@@ -1,8 +1,8 @@
 import React from 'react'
 import './Style.css'
-
+import '../../../App.css'
 import TitleBase from '../../../assets/img/title_base_2.webp'
-import BodyTimeLogo from '../../../assets/img/body__time-logo.webp'
+
 import BodyTimePicture from '../../../assets/img/body__time-picture.webp'
 
 const Booking = () => {
@@ -27,9 +27,7 @@ const Booking = () => {
           <div className="order-btn">
             <button>Đặt bàn ngay</button>
           </div>
-          <div className="time-logo">
-            <img src={BodyTimeLogo} alt="" />
-          </div>
+          
         </div>
       </div>
       <div className="img-right">

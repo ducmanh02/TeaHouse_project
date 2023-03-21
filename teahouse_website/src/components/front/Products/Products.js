@@ -2,7 +2,7 @@ import React from 'react'
 import './Style.css'
 import { useState } from 'react'
 import DataProducts from '../../back/Data/DataProducts'
-
+import '../../../App.css'
 import Logo from '../../../assets/img/title_base.webp'
 import {FaShoppingCart} from 'react-icons/fa'
 

@@ -40,6 +40,7 @@
   .img-tea img {
     width: 100%;
     cursor:pointer;
+    /* object-fit: cover; */
   }
   .box-tea {
     display: flex;

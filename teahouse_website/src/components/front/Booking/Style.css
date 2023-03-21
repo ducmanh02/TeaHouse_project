@@ -2,7 +2,6 @@
 .info-time {
   max-width: 1140px;
   display: flex;
-  height: 580px;
   margin: auto;
 }
 .time-left {
@@ -49,4 +48,61 @@
 .img-right img {
   height: 95%;
   width: 100%;
+}
+
+
+@media screen and (max-width: 426px) {
+
+  .time-left {
+    width: 100%;
+    margin: 0 auto;
+    background-color: #4d8a54;
+  }
+  .time-content {
+    width: 100%;
+    padding :20px;
+  }
+  .img-right {
+    display: none;
+  }
+  .time-logo {
+    display: none;
+  }
+  
+
+}
+
+@media screen and (min-width: 426px) and (max-width: 769px) {
+  
+
+  .About__content {
+    margin: auto;
+    padding: 20px;
+  }
+
+  .time-left {
+    width: 90%;
+    margin: 0 auto;
+    background-color: #4d8a54;
+  }
+  .time-content {
+    max-width: 80%;
+    padding: aut;
+  }
+  .img-right {
+    display: none;
+  }
+  .time-logo {
+    float: right;
+    transform: translate(45px, -150px);
+  }
+
+  
+}
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  
+
+}
+*{
+  box-sizing: border-box;
 }

@@ -1,5 +1,7 @@
 import React from 'react'
+import '../../../App.css'
 import './Style.css'
+
 import Logo from '../../../assets/img/logo.webp'
 
 import {FaTwitter, FaTiktok, FaFacebook, FaYoutube ,FaInstagram} from 'react-icons/fa'

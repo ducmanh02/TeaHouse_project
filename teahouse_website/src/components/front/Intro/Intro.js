@@ -1,5 +1,6 @@
 import React from 'react'
 import './Style.css'
+import '../../../App.css'
 
 import Slider from '../../../assets/img/slider_1.webp'
 import NewTitle from '../../../assets/img/title_base.webp'

@@ -1,5 +1,6 @@
 import React from 'react'
 import './Style.css'
+import '../../../App.css'
 import Picture1 from '../../../assets/img/picture_1.webp'
 import Picture2 from '../../../assets/img/picture_2.webp'
 import Picture3 from '../../../assets/img/picture_3.webp'
