@@ -33,6 +33,7 @@ const Products = () => {
     ])
     console.log(activeItem)
 
+  const [an,setAn]=useState(HotTea)
 
     return (
         <div>
@@ -46,23 +47,31 @@ const Products = () => {
                     </div>
                 </div>
                 <ul className="check-list">
-                    <li className='ckeck-list-item active'>
-                        <div className='check-list-item-link' >Trà nóng</div>
+                    <li className='ckeck-list-item active '>
+                        <div className='check-list-item-link ' onClick={()=>{
+                            setAn(HotTea)
+                        }} >Trà nóng</div>
                     </li>
                     <li className='ckeck-list-item'>
-                        <div className='check-list-item-link'>Trà hoa quả</div>
+                        <div className='check-list-item-link' onClick={()=>{
+                            setAn(HotTea)
+                        }}>Trà hoa quả</div>
                     </li>
                     <li className='ckeck-list-item'>
-                        <div className='check-list-item-link'>Smoothies</div>
+                        <div className='check-list-item-link' onClick={()=>{
+                            setAn(Smoothies)
+                        }}>Smoothies</div>
                     </li>
                     <li className='check-list-item'>
-                        <div className='check-list-item-link'>Bánh ngọt</div>
+                        <div className='check-list-item-link' onClick={()=>{
+                            setAn(Cake)
+                        }}>Bánh ngọt</div>
                     </li>
 
                 </ul>
             </div>
             <div class="list-tea">
-                {HotTea.map((el, index) => (
+                {an.map((el, index) => (
                     <div key={index} class="box-tea">
                         <div class="img-tea">
                             <img src={el.image} alt="" />
