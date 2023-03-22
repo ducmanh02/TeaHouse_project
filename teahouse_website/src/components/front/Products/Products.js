@@ -69,7 +69,7 @@ const Products = ({ handleAddProduct,}) => {
                             </div>
                             <div className="shopping-cart-button">
                                 <FaShoppingCart  onClick={() =>{ handleAddProduct(el);
-                                toast.success("Added product")
+                                toast.success("Added product",{position:toast.POSITION.TOP_CENTER})
                                 }}/>
                             </div>
                         </div>
