@@ -1,5 +1,5 @@
-.header{
-    height: 10vh;
+.header-top{
+    height: 12vh;
     width: 100%;
     position: fixed;
     background-color : #4d8a54;;
@@ -10,11 +10,62 @@
     padding : 0 30px;
     z-index: 1000;
 }
+.header-number p{
+    margin: 0;
+    font-weight: 700;
+}
+.header-right{
+    display: flex;
+    width: 20%;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-account{
+    display: flex;
+    flex-direction: column;
+
+}
+.header-account p{
+    margin: 0;
+    font-weight: 700;
+    cursor: pointer;
+}
+.header-sign{
+    display: block;
+    position: relative;
+    top: 8vh;
+    left: -100px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+    box-shadow: 0 1px 10px rgb(0 0 0 / 30%);
+    border-radius: 5px;
+    text-decoration: none;
+}
+.header-sign a{
+    text-decoration: none;
+    color: black;
+    font-weight: 600;
+    font-size: 15px;
+
+
+}
+
+.header-LOGO img{
+    width: 120px;
+
+}
 .header-icon-shopping-cart{
-    font-size: 40px;
+    font-size: 32px;
     cursor: pointer;
 
 }
+
+
+
+/* header bottom */
+
+
 .total-quantity-item {
     position: relative;
     left: -10px;

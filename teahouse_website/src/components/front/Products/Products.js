@@ -6,6 +6,9 @@ import '../../../App.css'
 import Logo from '../../../assets/img/title_base.webp'
 import {FaShoppingCart} from 'react-icons/fa'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const Products = ({ handleAddProduct,}) => {
     const sanpham = DataProducts
     const HotTea = sanpham.filter(el => el.type === 'HotTea')
@@ -61,11 +64,13 @@ const Products = ({ handleAddProduct,}) => {
                         </div>
                         <div className="tea-info">
                             <div className="info-left">
-                                <h3>{el.title.toUpperCase()}</h3>
+                                <div>{el.title.toUpperCase()}</div>
                                 <p>Giá: <strong>{el.price}đ</strong></p>
                             </div>
                             <div className="shopping-cart-button">
-                                <FaShoppingCart  onClick={() => handleAddProduct(el)}/>
+                                <FaShoppingCart  onClick={() =>{ handleAddProduct(el);
+                                toast.success("Added product")
+                                }}/>
                             </div>
                         </div>
                     </div>

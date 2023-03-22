@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 import { useState } from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import Home from "./components/Home";
 import Admin from "./components/Admin";
 import Admin_product from "./components/Admin/quan_ly_product";
-import Admin_user from "./components/Admin/quan_ly_user"
+import Admin_user from "./components/Admin/quan_ly_user";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
    const [cartItems, setCartItems] = useState([]);
@@ -51,7 +53,7 @@ function App() {
 
       
       </BrowserRouter>
-      {/* <ToastContainer /> */}
+      <ToastContainer />
     </div>
   );
 }
