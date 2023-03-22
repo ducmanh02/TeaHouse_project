@@ -58,10 +58,10 @@ const Intro = () => {
         </ul>
       </div>
     </div>
-    <div id="introduce__part" class="AboutUs">
-      <div class="About__content">
-        <div class="box-content">
-          <div class="about-img">
+    <div id="introduce__part" className="AboutUs">
+      <div className="About__content">
+        <div className="box-content">
+          <div className="about-img">
             <img src={Logo} alt="" />
           </div>
           <h1>TẠI SAO CHỌN CHÚNG TÔI</h1>
@@ -72,24 +72,24 @@ const Intro = () => {
             tuyệt hảo.
           </p>
         </div>
-        <ul class="list-quantity">
-          <li class="box-quantity">
-            <div class="list-text">
-              <div class="list-icon">
+        <ul className="list-quantity">
+          <li className="box-quantity">
+            <div className="list-text">
+              <div className="list-icon">
                 <img src={IconAboutUs1} alt="" />
               </div>
-              <div class="modal-content">
+              <div className="modal-content">
                 <h4>Giá cả phải chăng</h4>
                 <p>Cam kết chỉ cung cấp cà phê có nguồn gốc được kiểm soát</p>
               </div>
             </div>
           </li>
-          <li class="box-quantity">
-            <div class="list-text">
-              <div class="list-icon">
+          <li className="box-quantity">
+            <div className="list-text">
+              <div className="list-icon">
               <img src={IconAboutUs2} alt="" />
               </div>
-              <div class="modal-content">
+              <div className="modal-content">
                 <h4>Hương vị tuyệt hảo</h4>
                 <p>
                   Những giọt trà được lựa chọn cẩn thận ngay từ lúc đang ngâm
@@ -98,12 +98,12 @@ const Intro = () => {
               </div>
             </div>
           </li>
-          <li class="box-quantity">
-            <div class="list-text">
-              <div class="list-icon">
+          <li className="box-quantity">
+            <div className="list-text">
+              <div className="list-icon">
                 <img src={IconAboutUs3} alt="" />
               </div>
-              <div class="modal-content">
+              <div className="modal-content">
                 <h4>Sản phẩm tự nhiên</h4>
                 <p>
                   Cam kết chỉ cung cấp lá trà có nguồn gốc được kiểm soát chất

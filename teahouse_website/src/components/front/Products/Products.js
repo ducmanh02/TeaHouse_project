@@ -6,16 +6,18 @@ import '../../../App.css'
 import Logo from '../../../assets/img/title_base.webp'
 import {FaShoppingCart} from 'react-icons/fa'
 
-const Products = () => {
+const Products = ({ handleAddProduct,}) => {
     const sanpham = DataProducts
     const HotTea = sanpham.filter(el => el.type === 'HotTea')
+    const FoodTea = sanpham.filter(el => el.type === 'HotTea').sort((a, b) => {
+        return b.id - a.id;
+    });
     const Smoothies = sanpham.filter(el => el.type === 'Smoothies')
     const Cake = sanpham.filter(el => el.type === 'Cake')
     
    
 
-    const [an,setAn]=useState(HotTea)
-    console.log(an);
+    const [typeOfTea,setTypeOfTea]=useState(HotTea)
     return (
         <div>
             <div className="Menu-item">
@@ -30,40 +32,40 @@ const Products = () => {
                 <ul className="check-list">
                     <li className='ckeck-list-item active '>
                         <div className='check-list-item-link ' onClick={()=>{
-                            setAn(HotTea)
+                            setTypeOfTea(HotTea)
                         }} >Trà nóng</div>
                     </li>
                     <li className='ckeck-list-item'>
                         <div className='check-list-item-link' onClick={()=>{
-                            setAn(HotTea)
+                            setTypeOfTea(FoodTea)
                         }}>Trà hoa quả</div>
                     </li>
                     <li className='ckeck-list-item'>
                         <div className='check-list-item-link' onClick={()=>{
-                            setAn(Smoothies)
+                            setTypeOfTea(Smoothies)
                         }}>Smoothies</div>
                     </li>
                     <li className='check-list-item'>
                         <div className='check-list-item-link' onClick={()=>{
-                            setAn(Cake)
+                            setTypeOfTea(Cake)
                         }}>Bánh ngọt</div>
                     </li>
 
                 </ul>
             </div>
             <div className="list-tea">
-                {an.map((el, index) => (
-                    <div key={index} class="box-tea">
-                        <div class="img-tea">
+                {typeOfTea.map((el, index) => (
+                    <div key={index} className="box-tea">
+                        <div className="img-tea">
                             <img src={el.image} alt="" />
                         </div>
-                        <div class="tea-info">
-                            <div class="info-left">
+                        <div className="tea-info">
+                            <div className="info-left">
                                 <h3>{el.title.toUpperCase()}</h3>
                                 <p>Giá: <strong>{el.price}đ</strong></p>
                             </div>
-                            <div class="shopping-cart-button">
-                                <FaShoppingCart/>
+                            <div className="shopping-cart-button">
+                                <FaShoppingCart  onClick={() => handleAddProduct(el)}/>
                             </div>
                         </div>
                     </div>
