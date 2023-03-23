@@ -1,7 +1,7 @@
 import React from 'react'
 import './Style.css'
 import { useState } from 'react'
-import DataProducts from '../../back/Data/DataProducts'
+
 import '../../../App.css'
 import Logo from '../../../assets/img/title_base.webp'
 import {FaShoppingCart} from 'react-icons/fa'
@@ -10,11 +10,10 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Products = ({ handleAddProduct,}) => {
-    const sanpham = DataProducts
+    const sanpham=JSON.parse(localStorage.getItem('product'))
+   
     const HotTea = sanpham.filter(el => el.type === 'HotTea')
-    const FoodTea = sanpham.filter(el => el.type === 'HotTea').sort((a, b) => {
-        return b.id - a.id;
-    });
+    const FoodTea = sanpham.filter(el => el.type === 'FoodTea')
     const Smoothies = sanpham.filter(el => el.type === 'Smoothies')
     const Cake = sanpham.filter(el => el.type === 'Cake')
     

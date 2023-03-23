@@ -4,7 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
-function Admin_user() {
+function AdminUser() {
   const [usercorrec, setUsercorrec] = useState({});
   const [correc, setCorrec] = useState({
     username:"",
@@ -115,4 +115,4 @@ function Admin_user() {
   );
 }
 
-export default Admin_user;
+export default AdminUser;

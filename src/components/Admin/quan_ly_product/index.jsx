@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { toast } from "react-toastify";
-function Admin_product() {
+function AdminProduct() {
   const [productcorrec, setProductcorrec] = useState({});
   const [correc, setCorrec] = useState({
     image: "",
@@ -26,7 +26,8 @@ function Admin_product() {
     id: parseInt(Date.now()),
   });
   const save = () => {
-    if (!correc.image || !correc.title||!correc.type||!correc.price) return toast.error("nhap day du thong tin");
+    if (!correc.image || !correc.title||!correc.price) return toast.error("nhap day du thong tin");
+    toast.success("sua thanh cong")
     const indexcorrec = listproduct.findIndex(
       (el) => el.id === productcorrec.id
     );
@@ -49,7 +50,8 @@ function Admin_product() {
     setShowadd(true);
   };
   const handeradd = (el) => {
-    if (!product.image || !product.title||!product.type||!product.price) return toast.error("nhap day du thong tin");
+    if (!product.image || !product.title||!product.price) return toast.error("nhap day du thong tin");
+    toast.success("them thanh cong")
     setProduct({ ...product, id: parseInt(Date.now()) });
     setListProduct([...listproduct, product]);
     localStorage.setItem("product", JSON.stringify([...listproduct, product]));
@@ -78,6 +80,7 @@ function Admin_product() {
       <Button
         style={{
           display: "flex",
+          position:"fixed",
           justifyContent: "center",
           alignItems: "center",
           textAlign: "center",
@@ -104,7 +107,7 @@ function Admin_product() {
               <tr key={el.id}>
                 <td>{el.id}</td>
                 <td>
-                  <img src={el.image} alt=""></img>
+                  <img style={{width:"200px"}} src={el.image} alt=""></img>
                 </td>
                 <td>{el.title}</td>
                 <td>{el.type}</td>
@@ -137,7 +140,7 @@ function Admin_product() {
               <Form.Label>image</Form.Label>
               <Form.Control
                 autoFocus
-                value={productcorrec.image}
+               
                 onChange={(el) =>
                   setCorrec({ ...correc, image: el.target.value })
                 }
@@ -158,9 +161,8 @@ function Admin_product() {
               <Form.Label>Type</Form.Label>
               <Form.Control
                 as="select"
-                value={correc.value}
                 onChange={(el) =>
-                  (setProduct({ ...correc, type: el.target.value }))
+                  setCorrec({ ...correc, type: el.target.value })
                 }
               >
                 <option value="HotTea">HotTea</option>
@@ -222,7 +224,6 @@ function Admin_product() {
               <Form.Label>Type</Form.Label>
               <Form.Control
                 as="select"
-                value={product.value}
                 onChange={(el) =>
                   (setProduct({ ...product, type: el.target.value }))
                 }
@@ -259,4 +260,4 @@ function Admin_product() {
   );
 }
 
-export default Admin_product;
+export default AdminProduct;
