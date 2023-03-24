@@ -46,7 +46,7 @@ function Signup() {
     return (
     <div>      
         <img
-    src="http://localhost:3001/static/media/slider_1.65f698ae20b8d594f75a.webp"
+    src="http://localhost:3000/static/media/slider_1.65f698ae20b8d594f75a.webp"
     alt="slide"
   ></img>
   <Modal show={true}>
