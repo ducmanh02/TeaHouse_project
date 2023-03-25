@@ -4,6 +4,7 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { toast } from "react-toastify";
 function AdminUser() {
   const [usercorrec, setUsercorrec] = useState({});
   const [correc, setCorrec] = useState({
@@ -31,6 +32,7 @@ function AdminUser() {
     const usersdelet = person.filter((el) => el.username !== usernamedelet);
     localStorage.setItem("user", JSON.stringify(usersdelet));
     setPerson(usersdelet);
+    toast.success("xóa thành công")
   };
   useEffect(() => {
     setPerson(

@@ -18,9 +18,9 @@ function Signup() {
       const finduser = user.find((el) => username === el.username);
       console.log(!finduser);
       if (!username || !password || !confirmpassword)
-        return toast.error("nhap day du thong tin");
-      if (confirmpassword !== password) return toast.error("xem lai mat khau");
-      if (!finduser === false) return toast.error("tai khoan da ton tai");
+        return toast.error("nhập đầy đủ thông tin");
+      if (confirmpassword !== password) return toast.error("xem lại mật khẩu ");
+      if (!finduser === false) return toast.error("tài khoản đã tồn tại");
       else {
         const newuser = {
           username: username,
@@ -32,7 +32,7 @@ function Signup() {
         // navigate("/đăng nhập");
   
         localStorage.setItem("user", JSON.stringify([...user, newuser]));
-        toast.success ("dang ky thanh cong")
+        toast.success ("đăng ký thành công")
       }
     
     };
@@ -79,7 +79,7 @@ function Signup() {
               <Form.Text onClick={()=>{
               
                 
-              }} style={{fontSize:"20px"}}><Link to="/">Đã có tài khoản click vào đây tiến đến đăng nhập</Link></Form.Text>
+              }} style={{fontSize:"20px"}}><Link to="/" style={{"textDecoration":"none"}}>Đã có tài khoản click vào đây tiến đến đăng nhập</Link></Form.Text>
             </FormGroup>
           </Form>
             </Modal.Body>

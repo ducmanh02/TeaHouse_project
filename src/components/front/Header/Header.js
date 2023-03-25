@@ -32,14 +32,15 @@ const { username, password } = person;
 
 const handerout=()=>{
   setShowname(false)
+  toast.success(`xin hẹn gặp lại ${username}`)
 }
 const handerclick = (el) => {
   el.preventDefault();
-  if (!username || !password) return toast.error("nhap day du thong tin");
+  if (!username || !password) return toast.error("nhập đầy đủ thông tin");
   const finduser=users.find((el)=>el.username===username&&el.password===password);
 
   if(finduser===undefined){
-    toast.error(`tai khoan ${username} khong ton tai`)
+    toast.error(`tài khoản ${username} không tồn tại`)
   }
   else 
   {
@@ -47,7 +48,7 @@ const handerclick = (el) => {
     setName(username)
     setShowname(true)
     setDisplayACcount(false)
-        toast.success(`dang nhap thanh cong`)
+        toast.success(`đăng nhập thành công`)
        setShow(false)
   }
 };
@@ -156,7 +157,7 @@ const handerclick = (el) => {
             <FormGroup>
               <Form.Text onClick={()=>{
 
-              }} style={{fontSize:"20px"}}><a href='/Signup' >Chưa có tài khoản bạn có thể click vào đây để đăng ký</a></Form.Text>
+              }} style={{fontSize:"20px"}}><a href='/Signup' style={{"textDecoration":"none"}}>Chưa có tài khoản bạn có thể click vào đây để đăng ký</a></Form.Text>
             </FormGroup>
           </Form>
         </Modal.Body>

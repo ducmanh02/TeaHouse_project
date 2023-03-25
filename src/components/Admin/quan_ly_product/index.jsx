@@ -26,8 +26,8 @@ function AdminProduct() {
     id: parseInt(Date.now()),
   });
   const save = () => {
-    if (!correc.image || !correc.title||!correc.price) return toast.error("nhap day du thong tin");
-    toast.success("sua thanh cong")
+    if (!correc.image || !correc.title||!correc.price) return toast.error("nhập đầy đủ thông tin");
+    toast.success("sửa thành công")
     const indexcorrec = listproduct.findIndex(
       (el) => el.id === productcorrec.id
     );
@@ -50,8 +50,8 @@ function AdminProduct() {
     setShowadd(true);
   };
   const handeradd = (el) => {
-    if (!product.image || !product.title||!product.price) return toast.error("nhap day du thong tin");
-    toast.success("them thanh cong")
+    if (!product.image || !product.title||!product.price) return toast.error("nhập đầy đủ thông tin");
+    toast.success("thêm thàng công")
     setProduct({ ...product, id: parseInt(Date.now()) });
     setListProduct([...listproduct, product]);
     localStorage.setItem("product", JSON.stringify([...listproduct, product]));
@@ -60,6 +60,7 @@ function AdminProduct() {
     const productdelete = listproduct.filter((el) => el.id !== id);
     localStorage.setItem("product", JSON.stringify(productdelete));
     setListProduct(productdelete);
+    toast.success("xóa thành công")
   };
   useEffect(() => {
     setCorrec({
@@ -90,16 +91,16 @@ function AdminProduct() {
         ADD
       </Button>
       {listproduct.length > 0 ? (
-        <table className="table">
+        <table className="table" >
           <thead>
             <tr>
-              <td>Id</td>
-              <td>Image</td>
-              <td>Title</td>
-              <td>Type</td>
-              <td>Price</td>
-              <td>sửa</td>
-              <td>xóa</td>
+              <td style={{textAlign:"center"}}>Id</td>
+              <td style={{textAlign:"center"}}>Image</td>
+              <td style={{textAlign:"center"}}>Title</td>
+              <td style={{textAlign:"center"}}>Type</td>
+              <td style={{textAlign:"center"}}>Price</td>
+              <td style={{textAlign:"center"}}>sửa</td>
+              <td style={{textAlign:"center"}}>xóa</td>
             </tr>
           </thead>
           <tbody>
@@ -127,7 +128,7 @@ function AdminProduct() {
           </tbody>
         </table>
       ) : (
-        <h1>No User</h1>
+        <h1>No Product</h1>
       )}
       {/* /======modal save=====/ */}
       <Modal show={show} onHide={handleClose}>
