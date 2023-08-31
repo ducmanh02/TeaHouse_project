@@ -6,10 +6,10 @@ import Booking from '../front/Booking/Booking'
 import News from '../front/News/News'
 import Footer from '../front/Footer/Footer'
 
-function Home({cartItems, handleAddProduct, handleRemoveProduct,setCartItems}){
+function Home({cartItems, handleAddProduct, handleRemoveProduct}){
   return (
     <div  className="App">
-      <Header cartItems={cartItems} setCartItems={setCartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct}/>
+      <Header cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct}/>
       <Intro/>
       <Products cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct}/> 
       <Booking/>

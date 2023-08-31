@@ -127,11 +127,7 @@
 .cart-on-display-total-price{
     font-weight: 700
 }
-.cart-on-display-button{
-    display: flex;
-    justify-content: space-between;
-}
-.cart-on-display-checkout button,.cart-on-display-clear button{
+.cart-on-display-checkout button{
     background-color: #4d8a54;
     font-size: 20px;
     color: #fff;
@@ -143,8 +139,5 @@
     cursor: pointer;
 }
 .cart-on-display-checkout button:active{
-    transform: translateY(2px);
-}
-.cart-on-display-clear button:active{
     transform: translateY(2px);
 }

@@ -43,7 +43,7 @@ function App() {
       <BrowserRouter>
       {/* <Header/> */}
         <Routes>
-          <Route path="/" element={<Home cartItems={cartItems} setCartItems={setCartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct}/>} />
+          <Route path="/" element={<Home cartItems={cartItems} handleAddProduct={handleAddProduct} handleRemoveProduct={handleRemoveProduct}/>} />
           {/* <Route path="/đăng nhập" element={<Signin getname={getname}/>} /> */}
           <Route path="/Admin" element={<Admin />} />
           <Route path="/Admin/user" element={<Admin_user />} />

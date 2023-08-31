@@ -4,10 +4,9 @@ import { useState } from 'react'
 import { AiOutlineShoppingCart } from "react-icons/ai"
 import Logo from '../../../assets/img/logo_white.webp'
 import { Link } from 'react-router-dom'
-import { FaUserAlt } from 'react-icons/fa'
-import { toast } from 'react-toastify';
+import {FaUserAlt} from 'react-icons/fa'
 
-const Header = ({ cartItems,setCartItems, handleAddProduct, handleRemoveProduct }) => {
+const Header = ({ cartItems, handleAddProduct, handleRemoveProduct }) => {
   const [displayCart, setDisplayCart] = useState(false);
   const [displayACcount, setDisplayACcount] = useState(false)
 
@@ -18,7 +17,7 @@ const Header = ({ cartItems,setCartItems, handleAddProduct, handleRemoveProduct 
     <div className='header-main'>
 
       <div className='header-top'>
-        <div className='header-number'>
+      <div className='header-number'>
           <p>HOTLINE : 1900 1234</p>
         </div>
         <div className='header-LOGO'>
@@ -27,7 +26,7 @@ const Header = ({ cartItems,setCartItems, handleAddProduct, handleRemoveProduct 
 
         <div className='header-right'>
           <div className='header-account'>
-            <p onClick={() => setDisplayACcount(!displayACcount)}><FaUserAlt style={{ 'padding': '0 5px 3px 0', 'font-size': '20px' }} />Tài Khoản</p>
+            <p onClick={() => setDisplayACcount(!displayACcount)}><FaUserAlt style={{'padding' : '0 5px 3px 0','font-size':'20px'}}/>Tài Khoản</p>
           </div>
           {displayACcount && (
             <div className='header-sign'>
@@ -75,13 +74,8 @@ const Header = ({ cartItems,setCartItems, handleAddProduct, handleRemoveProduct 
                   <div className='cart-on-display-total-price'>
                     Total Price : {totalPrice}đ
                   </div>
-                  <div className='cart-on-display-button'>
-                    <div className='cart-on-display-checkout'>
-                      <button >Check Out</button>
-                    </div>
-                    <div className='cart-on-display-clear'>
-                      <button onClick={() => {setCartItems([]);toast.success('Removed',{position : toast.POSITION.TOP_CENTER})}} >Clear All</button>
-                    </div>
+                  <div className='cart-on-display-checkout'>
+                    <button >Check Out</button>
                   </div>
                 </div>
               )
